@@ -21,49 +21,6 @@ require_once(".." . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "conf
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-    <?php
-    $arr3 = ['a','b', 'c', 'd', 'e','f','g','h','i', 'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    $arr4 = str_split(strtoupper(implode($arr3)));
-    function find_missing_letter(array $array)/*: string*/
-    {
-
-        $abc = "abcdefghijklmnopqrstuvwxyz";
-        $abcUp = strtoupper($abc);
-        $arr1 = str_split($abc);
-        $arr2 = str_split($abcUp);
-//        $arr2 = str_split(strtolower(implode($arr3)));
-        $registr = 0;
-        for ($i = 0; $i< count($array); $i++) {
-            if ($i === 0 && $arr1[$i] !== $array[$i]){
-                if($arr1[$i+1] === $array[$i]){
-                    return $arr1[$i];
-                }elseif ($arr2[$i+1] === $array[$i]) {
-//                    echo $registr;
-                    return $arr2[$i];
-                }
-            }
-
-//            echo $arr1[$i].'+++'.$array[$i]."<br>";
-
-            if($arr1[$i] === $array[$i]){
-                $registr++;
-            }
-//echo $flag;
-            if ($registr !== 0 && $arr1[$i] !== $array[$i]) {
-
-                    return $arr1[$i];
-
-            } elseif ($registr == 0 && $arr2[$i] !== $array[$i]) {
-//                echo $registr;
-                    return $arr2[$i];
-                }
-            }
-
-    }
-
-    echo find_missing_letter($arr4);
-    ?>
-
     <div class="task">
         1. PHP task1.csv
         Создать класс с&nbsp;публичным методом import($filename)
